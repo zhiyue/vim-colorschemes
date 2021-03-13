@@ -56,7 +56,7 @@ if has("gui_running")
     hi CursorLine         guibg=#2e2e37
 
     hi IncSearch      gui=BOLD   guifg=#303030   guibg=#cd8b60
-    hi Search         gui=NONE   guifg=#303030   guibg=#cd8b60
+    hi Search         gui=NONE   guifg=#303030   guibg=#ad7b57
     hi ErrorMsg       gui=BOLD   guifg=#ffffff   guibg=#ce4e4e
     hi WarningMsg     gui=BOLD   guifg=#ffffff   guibg=#ce8e4e
     hi ModeMsg        gui=BOLD   guifg=#7e7eae   guibg=NONE
@@ -91,7 +91,7 @@ if has("gui_running")
     hi Directory      gui=NONE   guifg=#00ff8b   guibg=NONE
     hi LineNr         gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e
     hi NonText        gui=BOLD   guifg=#8b8bcd   guibg=NONE
-    hi SpecialKey     gui=BOLD   guifg=#ab60ed   guibg=NONE
+    hi SpecialKey     gui=BOLD   guifg=#3b205d   guibg=NONE
     hi Title          gui=BOLD   guifg=#af4f4b   guibg=NONE
     hi Visual         gui=NONE   guifg=#eeeeee   guibg=#4e4e8f
 
@@ -140,6 +140,10 @@ if has("gui_running")
 
         hi MatchParen   gui=NONE      guifg=#cfbfad   guibg=#4e4e8f
     endif
+    if v:version >= 703
+        hi Conceal      gui=NONE      guifg=#c080d0   guibg=NONE
+        hi ColorColumn  gui=NONE                      guibg=#2e2e2e
+    endif
 else
     if ! g:inkpot_black_background
         exec "hi Normal         cterm=NONE   ctermfg=" . <SID>X(79) . " ctermbg=" . <SID>X(80)
@@ -148,7 +152,7 @@ else
     endif
 
     exec "hi IncSearch      cterm=BOLD   ctermfg=" . <SID>X(80) . " ctermbg=" . <SID>X(73)
-    exec "hi Search         cterm=NONE   ctermfg=" . <SID>X(80) . " ctermbg=" . <SID>X(73)
+    exec "hi Search         cterm=NONE   ctermfg=" . <SID>X(80) . " ctermbg=" . <SID>X(52)
     exec "hi ErrorMsg       cterm=BOLD   ctermfg=" . <SID>X(16) . " ctermbg=" . <SID>X(48)
     exec "hi WarningMsg     cterm=BOLD   ctermfg=" . <SID>X(16) . " ctermbg=" . <SID>X(68)
     exec "hi ModeMsg        cterm=BOLD   ctermfg=" . <SID>X(38) . " ctermbg=" . "NONE"
@@ -210,6 +214,10 @@ else
         exec "hi SpellLocal     cterm=NONE ctermbg=" . <SID>X(36)
         exec "hi SpellCap       cterm=NONE ctermbg=" . <SID>X(21)
         exec "hi MatchParen     cterm=NONE ctermbg=" . <SID>X(14) . "ctermfg=" . <SID>X(25)
+    endif
+    if v:version >= 703
+        exec "hi Conceal      cterm=NONE      ctermfg=" . <SID>X(55) . " ctermbg=" . "NONE"
+        exec "hi ColorColumn  cterm=NONE      ctermbg=" . <SID>X(81)
     endif
 endif
 
